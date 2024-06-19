@@ -15,6 +15,8 @@ owner = "sudarsana-reddy"
 
 token = os.getenv("PAT")
 
+print(f"token: {token}")
+
 retention_number = 3
 
 headers = {
