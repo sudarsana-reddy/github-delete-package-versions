@@ -16,6 +16,6 @@ jobs:
               shell: bash
               run: |
                 pip install -r requirements.txt
-                python ./delete_package_versions.py
+                python delete_package_versions.py
               env:
                   TOKEN: ${{ secrets.PAT }}
