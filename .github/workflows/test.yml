@@ -19,4 +19,4 @@ jobs:
                 chmod +x delete_package_versions.py
                 python delete_package_versions.py
               env:
-                  TOKEN: ${{ secrets.PAT }}
+                  PAT: ${{ secrets.PAT }}
