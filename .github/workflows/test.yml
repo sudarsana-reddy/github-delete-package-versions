@@ -22,4 +22,4 @@ jobs:
                   PACKAGE_LIST : '["npm-proj"]'
                   PACKAGE_TYPE: npm
                   DELETE_VERSIONS_PATTERN: "1."
-                  RETENTION_NUMBER: 4
+                  RETENTION_NUMBER: 3
