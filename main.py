@@ -11,7 +11,7 @@ class MainClass:
 
 if __name__ == "__main__":
     # Replace these variables with your GitHub token, owner, repo, and package name
-    packages = json.loads(os.getenv("PACKAGE_LIST", '[]'))
+    packages = json.loads(os.getenv("PACKAGE_LIST", '["npm-proj"]'))
     package_type = os.getenv("PACKAGE_TYPE", "npm")
     owner = os.getenv("OWNER", "sudarsana-reddy")
     token = os.getenv("PAT")
@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     if(len(packages) == 0):
         print("No packages found in the package list")
-        sys.exit(1)
+        sys.exit(0)
 
     main_class = MainClass(token, owner)
     for package in packages:
