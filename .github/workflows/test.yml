@@ -21,5 +21,5 @@ jobs:
                   PAT: ${{ secrets.PAT }}
                   PACKAGE_LIST : '["npm-proj"]'
                   PACKAGE_TYPE: npm
-                  DELETE_VERSIONS_PATTERN: "1."
+                  DELETE_VERSIONS_PATTERN: "0."
                   RETENTION_NUMBER: 3
