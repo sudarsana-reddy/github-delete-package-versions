@@ -15,7 +15,7 @@ if __name__ == "__main__":
     package_type = os.getenv("PACKAGE_TYPE", "npm")
     owner = os.getenv("OWNER", "sudarsana-reddy")
     token = os.getenv("PAT")
-    retention_number = os.getenv("RETENTION_NUMBER", 4) 
+    retention_number = int(os.getenv("RETENTION_NUMBER", 4))
     delete_versions_pattern = os.getenv("DELETE_VERSIONS_PATTERN", "0.")
 
     if(len(packages) == 0):
