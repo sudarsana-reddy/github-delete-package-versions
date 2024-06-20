@@ -21,7 +21,7 @@ if __name__ == "__main__":
     if(len(packages) == 0):
         print("No packages found in the package list")
         sys.exit(1)
-        
+
     main_class = MainClass(token, owner)
     for package in packages:
         main_class.api.deleteOldVersions(package, package_type, retention_number, delete_versions_pattern)

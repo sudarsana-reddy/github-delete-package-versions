@@ -63,6 +63,9 @@ class GitHubPackageVersionsAPI:
         print(f"Deleting old versions for package '{package_name}' ({package_type})")
         versions = self.getPackageVersions(package_name, package_type)
         branch_versions = [version for version in versions if version["name"].startswith(delete_versions_pattern)]
+        if(len(branch_versions) <= retention_number):
+            print("No old versions to delete.")
+            return        
         to_be_deleted_versions = branch_versions[retention_number:]
         
         failed_versions = []
