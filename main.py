@@ -12,11 +12,11 @@ class MainClass:
 if __name__ == "__main__":
     
     packages = json.loads(os.getenv("PACKAGE_LIST", '[]'))
-    package_type = os.getenv("PACKAGE_TYPE", "npm")
+    package_type = os.getenv("PACKAGE_TYPE")
     owner = os.getenv("OWNER", "sudarsana-reddy")
     token = os.getenv("PAT")
     retention_number = int(os.getenv("RETENTION_NUMBER", 4))
-    delete_versions_pattern = os.getenv("DELETE_VERSIONS_PATTERN", "0.")
+    delete_versions_pattern = os.getenv("DELETE_VERSIONS_PATTERN")
 
     if(len(packages) == 0):
         print("No packages found in the package list")
