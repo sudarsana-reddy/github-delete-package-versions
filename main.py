@@ -10,8 +10,8 @@ class MainClass:
     
 
 if __name__ == "__main__":
-    # Replace these variables with your GitHub token, owner, repo, and package name
-    packages = json.loads(os.getenv("PACKAGE_LIST", '["npm-proj"]'))
+    
+    packages = json.loads(os.getenv("PACKAGE_LIST", '[]'))
     package_type = os.getenv("PACKAGE_TYPE", "npm")
     owner = os.getenv("OWNER", "sudarsana-reddy")
     token = os.getenv("PAT")
