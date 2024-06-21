@@ -7,10 +7,7 @@ class GitHubPackageVersionsAPI:
         Initialize the GitHubPackageVersionsAPI class.
 
         :param token: GitHub personal access token.
-        :param owner: The owner of the repository.
-        :param repo: The name of the repository.
-        :param package_type: The type of the package (e.g., npm, maven, docker, etc.).
-        :param package_name: The name of the package.
+        :param owner: The owner of the repository.        
         """
         self.per_page = 100
         self.token = token
@@ -21,7 +18,11 @@ class GitHubPackageVersionsAPI:
             'Accept': 'application/vnd.github.v3+json'
         }       
 
-    def getPackageVersions(self, package_name, package_type="maven"):
+    def getPackageVersions(self, package_name, package_type):
+        """
+        :param package_type: The type of the package (e.g., npm, maven, docker, etc.).
+        :param package_name: The name of the package.
+        """
 
         page_number = 1
         has_next_page = True
@@ -60,6 +61,12 @@ class GitHubPackageVersionsAPI:
 
 
     def deleteOldVersions(self, package_name, package_type, retention_number, delete_versions_pattern):
+        """
+        :param package_type: The type of the package (e.g., npm, maven, docker, etc.).
+        :param package_name: The name of the package.
+        :param retention_number: The number of latest packages to be retained
+        :param delete_versions_pattern: The version pattern to be used to filter the package versions
+        """
         print(f"Deleting old versions for package '{package_name}' ({package_type})")
         versions = self.getPackageVersions(package_name, package_type)
         branch_versions = [version for version in versions if version["name"].startswith(delete_versions_pattern)]
